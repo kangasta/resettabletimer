@@ -1,10 +1,52 @@
-# NAME
+# resettable-timer
 
-TODO
+Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also provides fake timer for testing.
 
 ## Usage
 
-TODO
+### ResettableTimer
+
+```python
+from ResettableTimer import ResettableTimer
+
+delay = 5 # seconds
+function = lambda : print("Hello")
+
+# Create resettable timer
+t = ResettableTimer(delay, function)
+
+# Starting and canceling work similarly than with threading.Timer
+t.start()
+
+# Wait 1-5 seconds
+
+# Reset the timer
+t.reset()
+
+# Hello should be printed after five seconds
+
+```
+
+### FakeTimer
+
+```python
+from FakeTimer import FakeTimer
+from time import sleep
+
+t = FakeTimer(2, lambda : print("Hello"))
+
+# Starting and canceling work similarly than with threading.Timer
+t.start()
+
+# Wait >2 seconds
+# Nothing happens
+
+# Time passage is controlled with pass_time
+t.pass_time(2)
+
+# Hello should be printed
+
+```
 
 ## Testing
 
