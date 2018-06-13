@@ -9,11 +9,12 @@ class FakeTimer(object):
 		if self.__started:
 			raise RuntimeError("threads can only be started once")
 		self.__started = True
+		self.__passed = 0
 
 	def cancel(self):
 		self.__function = lambda : None
 
 	def pass_time(self, time):
 		self.__passed += time
-		if self.__passed >= self.__time:
+		if self.__started and self.__passed >= self.__time:
 			self.__function()
