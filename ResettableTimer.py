@@ -1,14 +1,16 @@
 from threading import Timer
 
 class ResettableTimer(object):
-	def __init__(self, time, function):
+	def __init__(self, time, function, args=[], kwargs={}):
 		self.__time = time
 		self.__function = function
+		self.__args = args
+		self.__kwargs = kwargs
 		self.__set()
 		self.__running = False
 
 	def __set(self):
-		self.__timer = Timer(self.__time, self.__function)
+		self.__timer = Timer(self.__time, self.__function, self.__args, self.__kwargs)
 
 	def start(self):
 		self.__running = True

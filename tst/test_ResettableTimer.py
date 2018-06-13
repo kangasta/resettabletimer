@@ -44,3 +44,12 @@ class ResettableTimerTest(TestCase):
 
 		t._ResettableTimer__timer.pass_time(6)
 		m.assert_called_once_with()
+
+	@patch("ResettableTimer.Timer", new=FakeTimer)
+	def test_timer_supports_args_and_kwargs(self):
+		m = Mock(return_value=None)
+
+		t = ResettableTimer(3, m, ["args"], {"kwarg":"kwarg"})
+		t.start()
+		t._ResettableTimer__timer.pass_time(3)
+		m.assert_called_once_with("args", kwarg="kwarg")

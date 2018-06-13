@@ -1,7 +1,9 @@
 class FakeTimer(object):
-	def __init__(self, time, function):
+	def __init__(self, time, function, args=[], kwargs={}):
 		self.__time = time
 		self.__function = function
+		self.__args = args
+		self.__kwargs = kwargs
 		self.__started = False
 		self.__passed = 0
 
@@ -17,4 +19,4 @@ class FakeTimer(object):
 	def pass_time(self, time):
 		self.__passed += time
 		if self.__started and self.__passed >= self.__time:
-			self.__function()
+			self.__function(*self.__args, **self.__kwargs)

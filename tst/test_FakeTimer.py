@@ -40,3 +40,11 @@ class FakeTimerTest(TestCase):
 		t.start()
 		t.pass_time(3)
 		m.assert_not_called()
+
+	def test_timer_supports_args_and_kwargs(self):
+		m = Mock(return_value=None)
+
+		t = FakeTimer(3, m, ["args"], {"kwarg":"kwarg"})
+		t.start()
+		t.pass_time(3)
+		m.assert_called_once_with("args", kwarg="kwarg")

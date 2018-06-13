@@ -10,10 +10,10 @@ Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also
 from ResettableTimer import ResettableTimer
 
 delay = 5 # seconds
-function = lambda : print("Hello")
+function = print
 
 # Create resettable timer
-t = ResettableTimer(delay, function)
+t = ResettableTimer(delay, function, ["Hello"], {"end":" timer!\n"})
 
 # Starting and canceling work similarly than with threading.Timer
 t.start()
@@ -33,7 +33,7 @@ t.reset()
 from FakeTimer import FakeTimer
 from time import sleep
 
-t = FakeTimer(2, lambda : print("Hello"))
+t = FakeTimer(2, print, ["Hello"], {"end":" timer!\n"})
 
 # Starting and canceling work similarly than with threading.Timer
 t.start()
