@@ -1,4 +1,5 @@
 # resettable-timer
+[![Build Status](https://travis-ci.org/kangasta/resettable-timer.svg?branch=master)](https://travis-ci.org/kangasta/resettable-timer)
 
 Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also provides fake timer for testing.
 
