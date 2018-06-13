@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 
-from setuptools import setup
+import setuptools
 
-setup(name='resettable-timer',
-	version='0.5.0',
-	description='Wrapper for threading.Timer to allow resetting',
+with open("README.md", "r") as f:
+	long_description = f.read()
+
+setuptools.setup(
+	name='resettabletimer',
+	version='0.6.0',
 	author='Toni Kangas',
-	py_modules=['ResettableTimer', 'FakeTimer'],
+	description='Wrapper for threading.Timer to allow resetting',
+	long_description=long_description,
+	long_description_content_type="text/markdown",
+	url="https://github.com/kangasta/resettabletimer",
+	packages=setuptools.find_packages(),
+	classifiers=(
+		"Programming Language :: Python :: 3",
+		"License :: OSI Approved :: MIT License",
+		"Operating System :: OS Independent",
+	)
 )

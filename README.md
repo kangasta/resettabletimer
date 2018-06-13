@@ -32,7 +32,6 @@ t.reset()
 
 ```python
 from FakeTimer import FakeTimer
-from time import sleep
 
 t = FakeTimer(2, print, ["Hello"], {"end":" timer!\n"})
 
@@ -54,11 +53,15 @@ t.pass_time(2)
 Run unit tests with command:
 
 ```bash
+cd resettable-timer
+
 python3 -m unittest discover -s tst/
 ```
 
 Get test coverage with commands:
 ```bash
+cd resettable-timer
+
 coverage run -m unittest discover -s tst/
 coverage report -m
 ```

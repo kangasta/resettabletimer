@@ -11,4 +11,5 @@ install:
   - pip install -r tst/requirements.txt
 
 script:
+  - cd resettable-timer
   - python -m unittest discover -s tst/
