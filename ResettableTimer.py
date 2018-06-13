@@ -1,4 +1,3 @@
-
 from threading import Timer
 
 class ResettableTimer(object):
