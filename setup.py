@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(name='resettable-timer',
 	version='0.5.0',
-	description='Wrapper to allow resetting threading.Timer',
+	description='Wrapper for threading.Timer to allow resetting',
 	author='Toni Kangas',
 	py_modules=['ResettableTimer', 'FakeTimer'],
 )
