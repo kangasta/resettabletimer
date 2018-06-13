@@ -26,17 +26,3 @@ class ResettableTimer(object):
 
 		if self.__running:
 			self.start()
-
-if __name__ == "__main__":
-	from time import sleep
-	from datetime import datetime
-
-	print("Start 5 second timer (" + str(datetime.now().time()) + ")")
-	r = ResettableTimer(5, lambda : print("Done (" + str(datetime.now().time()) + ")"))
-	r.start()
-
-	print("Sleep 3 seconds (" + str(datetime.now().time()) + ")")
-	sleep(3)
-
-	print("Reset 5 second timer (" + str(datetime.now().time()) + ")")
-	r.reset()
