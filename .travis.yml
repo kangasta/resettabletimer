@@ -11,6 +11,7 @@ install:
 script:
 - cd resettabletimer
 - python -m unittest discover -s tst/
+- cd ..
 deploy:
   provider: pypi
   user: kangasta
@@ -18,3 +19,4 @@ deploy:
     secure: EG2zZDvDFUuuoxjoODMQMDM1gJhZuZ4jUnuTnyG4q7CYfdX9FUMM1PTw7skipm7yB9dMSF9F0YXQDVPvlY/btKqwckMagmKEPQiJmam3bKsDvxguSjKMH8+FPlSAb+aQyuj0Q5musYrQfm/zJNd5U8zSXYB099qHyAQjC9G/TvTOi1Uc1TrETFr/78hKIlxcZPtmwOp3eGZrFzL4CnFcPCpa+cB7WakBbdK1hculcNonoJfZWM30MuDmwC9Gs84OmsbuoUYYJGNx+eaq0kpS6mkrwDuZz5JR8tvcH8EhPbugPkWq2WzhsQDSxJj5UKVT8uCxYIEGGroJP7tsaepet5WqoRLNdj+CCmGh2c9Hc4OLO0DaAQP53RIhkeiyzXMWYlZXd+Dvqx1zxVSU27djgtCSWLL5nWvFA64XIhixal/20G5GgvlVxWtOa2zB+fjd8zA4/lPXN9gI1tRONhFagbe4i/gb2Q8Hr1p0E3Th3A3qQCga4dGdvMPtGHM4HlVpd6riGsRppM2RPZ4giTT1/Ckqpl1xF0NR8ad/OU3QxIq86kfyxp5Sz+13EZoLlnKH39zYLMajJuvnPSP3PvGuXfLApRpWuSBTmCPouiuNkTgbI/n8IpuS7b4+5B2w1b/yelInPE7FWyFan4wsOKYAA/9VRljY8u7ZYsOX0VxgEDc=
   on:
     tags: true
+    python: 3.6
