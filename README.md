@@ -1,5 +1,5 @@
-# resettable-timer
-[![Build Status](https://travis-ci.org/kangasta/resettable-timer.svg?branch=master)](https://travis-ci.org/kangasta/resettable-timer)
+# resettabletimer
+[![Build Status](https://travis-ci.org/kangasta/resettabletimer.svg?branch=master)](https://travis-ci.org/kangasta/resettabletimer)
 
 Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also provides fake timer for testing.
 
@@ -53,14 +53,14 @@ t.pass_time(2)
 Run unit tests with command:
 
 ```bash
-cd resettable-timer
+cd resettabletimer
 
 python3 -m unittest discover -s tst/
 ```
 
 Get test coverage with commands:
 ```bash
-cd resettable-timer
+cd resettabletimer
 
 coverage run -m unittest discover -s tst/
 coverage report -m
