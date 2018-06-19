@@ -7,7 +7,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
 	name='resettabletimer',
-	version='0.6.1',
+	version='0.6.2',
 	author='Toni Kangas',
 	description='Wrapper for threading.Timer to allow resetting',
 	long_description=long_description,

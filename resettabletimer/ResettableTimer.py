@@ -20,11 +20,11 @@ class ResettableTimer(object):
 		self.__running = False
 		self.__timer.cancel()
 
-	def reset(self):
+	def reset(self, start=False):
 		if self.__running:
 			self.__timer.cancel()
 
 		self.__set()
 
-		if self.__running:
+		if self.__running or start:
 			self.start()
