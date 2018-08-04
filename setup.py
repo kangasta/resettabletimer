@@ -7,7 +7,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
 	name='resettabletimer',
-	version='0.6.2',
+	version='0.6.3',
 	author='Toni Kangas',
 	description='Wrapper for threading.Timer to allow resetting',
 	long_description=long_description,
@@ -15,6 +15,7 @@ setuptools.setup(
 	url="https://github.com/kangasta/resettabletimer",
 	packages=setuptools.find_packages(),
 	classifiers=(
+		"Programming Language :: Python :: 2.7",
 		"Programming Language :: Python :: 3",
 		"License :: OSI Approved :: MIT License",
 		"Operating System :: OS Independent",
