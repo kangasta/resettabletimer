@@ -4,6 +4,7 @@ class FakeTimer(object):
 		self.__function = function
 		self.__args = args
 		self.__kwargs = kwargs
+		self.__canceled = False
 		self.__started = False
 		self.__passed = 0
 
@@ -14,9 +15,15 @@ class FakeTimer(object):
 		self.__passed = 0
 
 	def cancel(self):
-		self.__function = lambda : None
+		self.__canceled = True
+
+	def reset(self):
+		self.__passed = 0
+		if self.__canceled:
+			self.__started = False
+		self.__canceled = False
 
 	def pass_time(self, time):
 		self.__passed += time
-		if self.__started and self.__passed >= self.__time:
+		if not self.__canceled and self.__started and self.__passed >= self.__time:
 			self.__function(*self.__args, **self.__kwargs)

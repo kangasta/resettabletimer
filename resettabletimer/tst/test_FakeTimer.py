@@ -48,3 +48,34 @@ class FakeTimerTest(TestCase):
 		t.start()
 		t.pass_time(3)
 		m.assert_called_once_with("args", kwarg="kwarg")
+
+	def test_timer_can_be_reset(self):
+		m = Mock(return_value=None)
+
+		t = FakeTimer(5, m)
+		t.start()
+
+		t.pass_time(3)
+		m.assert_not_called()
+		t.reset()
+
+		t.pass_time(3)
+		m.assert_not_called()
+
+		t.pass_time(3)
+		m.assert_called_once_with()
+
+	def test_timer_can_be_reset_after_cancel(self):
+		m = Mock(return_value=None)
+
+		t = FakeTimer(5, m)
+		t.start()
+
+		t.pass_time(3)
+		m.assert_not_called()
+		t.cancel()
+		t.reset()
+		t.start()
+
+		t.pass_time(6)
+		m.assert_called_once_with()
