@@ -1,7 +1,7 @@
 from threading import Timer
 
 
-class ResettableTimer(object):
+class ResettableTimer:
     def __init__(self, time, function, args=None, kwargs=None):
         self._time = time
         self._function = function
