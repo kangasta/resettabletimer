@@ -1,0 +1,9 @@
+.
+
+# Unittest
+coverage
+mock
+
+# Static analysis
+pycodestyle
+pylint
