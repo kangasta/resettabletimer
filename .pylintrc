@@ -1,0 +1,6 @@
+[BASIC]
+good-names=a,b,c,
+           i,j,k,
+           e,d,f,
+           _,
+           resettabletimer
