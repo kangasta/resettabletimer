@@ -1,9 +1,5 @@
 from unittest import TestCase
-
-try:
-    from unittest.mock import Mock
-except ImportError:
-    from mock import Mock
+from unittest.mock import Mock
 
 from resettabletimer import FakeTimer
 
