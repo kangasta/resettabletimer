@@ -8,9 +8,6 @@ Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also
 ### ResettableTimer
 
 ```python
-# If using python 2, import print function
-from __future__ import print_function
-
 from resettabletimer import ResettableTimer
 
 delay = 5 # seconds
@@ -34,9 +31,6 @@ t.reset()
 ### FakeTimer
 
 ```python
-# If using python 2, import print function
-from __future__ import print_function
-
 from resettabletimer import FakeTimer
 
 t = FakeTimer(2, print, ["Hello"], {"end":" timer!\n"})
