@@ -1,5 +1,8 @@
 # resettabletimer
 
+[![CI](https://github.com/kangasta/resettabletimer/actions/workflows/ci.yml/badge.svg)](https://github.com/kangasta/resettabletimer/actions/workflows/ci.yml)
+[![Release](https://github.com/kangasta/resettabletimer/actions/workflows/release.yml/badge.svg)](https://github.com/kangasta/resettabletimer/actions/workflows/release.yml)
+
 Wrapper for `threading.Timer` to provide a resettable Timer implementation. Also provides fake timer for testing.
 
 ## Usage
