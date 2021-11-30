@@ -5,14 +5,13 @@ try:
 except ImportError:
 	from mock import Mock, patch
 
-from FakeTimer import FakeTimer
-from ResettableTimer import ResettableTimer
+from resettabletimer import FakeTimer, ResettableTimer
 
 class ResettableTimerTest(TestCase):
 	def test_dummy(self):
 		self.assertTrue(True)
 
-	@patch("ResettableTimer.Timer", new=FakeTimer)
+	@patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
 	def test_timer_can_be_reset(self):
 		m = Mock(return_value=None)
 
@@ -29,7 +28,7 @@ class ResettableTimerTest(TestCase):
 		t._ResettableTimer__timer.pass_time(3)
 		m.assert_called_once_with()
 
-	@patch("ResettableTimer.Timer", new=FakeTimer)
+	@patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
 	def test_timer_can_be_reset_after_cancel(self):
 		m = Mock(return_value=None)
 
@@ -45,7 +44,7 @@ class ResettableTimerTest(TestCase):
 		t._ResettableTimer__timer.pass_time(6)
 		m.assert_called_once_with()
 
-	@patch("ResettableTimer.Timer", new=FakeTimer)
+	@patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
 	def test_timer_supports_args_and_kwargs(self):
 		m = Mock(return_value=None)
 
@@ -54,7 +53,7 @@ class ResettableTimerTest(TestCase):
 		t._ResettableTimer__timer.pass_time(3)
 		m.assert_called_once_with("args", kwarg="kwarg")
 
-	@patch("ResettableTimer.Timer", new=FakeTimer)
+	@patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
 	def test_timer_can_be_started_with_reset(self):
 		m = Mock(return_value=None)
 

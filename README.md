@@ -56,18 +56,29 @@ t.pass_time(2)
 
 ## Testing
 
-Run unit tests with command:
+Check and automatically fix formatting with:
 
 ```bash
-cd resettabletimer
-
-python3 -m unittest discover -s tst/
+pycodestyle resettabletimer
+autopep8 -aaar --in-place resettabletimer
 ```
 
-Get test coverage with commands:
-```bash
-cd resettabletimer
+Run static analysis with:
 
-coverage run -m unittest discover -s tst/
+```bash
+pylint -E --enable=invalid-name,unused-import,useless-object-inheritance resettabletimer
+```
+
+Run unit tests:
+
+```bash
+# Run unit tests
+python3 -m unittest discover -s tst/
+
+# Run unit tests with coverage analysis
+coverage run \
+    --branch \
+    --source resettabletimer/ \
+    -m unittest discover -s tst/
 coverage report -m
 ```

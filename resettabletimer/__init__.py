@@ -1,4 +1,4 @@
 name = "resettabletimer"
 
-from .FakeTimer import FakeTimer
-from .ResettableTimer import ResettableTimer
+from ._faketimer import FakeTimer
+from ._resettabletimer import ResettableTimer
