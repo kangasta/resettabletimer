@@ -19,14 +19,14 @@ class ResettableTimerTest(TestCase):
         t = ResettableTimer(5, m)
         t.start()
 
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_not_called()
         t.reset()
 
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_not_called()
 
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_called_once_with()
 
     @patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
@@ -36,13 +36,13 @@ class ResettableTimerTest(TestCase):
         t = ResettableTimer(5, m)
         t.start()
 
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_not_called()
         t.cancel()
         t.reset()
         t.start()
 
-        t._ResettableTimer__timer.pass_time(6)
+        t._timer.pass_time(6)
         m.assert_called_once_with()
 
     @patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
@@ -51,7 +51,7 @@ class ResettableTimerTest(TestCase):
 
         t = ResettableTimer(3, m, ["args"], {"kwarg": "kwarg"})
         t.start()
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_called_once_with("args", kwarg="kwarg")
 
     @patch("resettabletimer._resettabletimer.Timer", new=FakeTimer)
@@ -59,9 +59,9 @@ class ResettableTimerTest(TestCase):
         m = Mock(return_value=None)
 
         t = ResettableTimer(3, m)
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_not_called()
 
         t.reset(start=True)
-        t._ResettableTimer__timer.pass_time(3)
+        t._timer.pass_time(3)
         m.assert_called_once_with()
