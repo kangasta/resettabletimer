@@ -5,7 +5,7 @@ try:
 except ImportError:
 	from mock import Mock
 
-from FakeTimer import FakeTimer
+from resettabletimer import FakeTimer
 
 class FakeTimerTest(TestCase):
 	def test_wont_call_without_start(self):

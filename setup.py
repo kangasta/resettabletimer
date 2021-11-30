@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 
+import re
 from setuptools import setup, find_packages
+
+with open("resettabletimer/_version.py", "r") as f:
+    try:
+        version = re.search(
+            r"__version__\s*=\s*[\"']([^\"']+)[\"']",f.read()).group(1)
+    except:
+        raise RuntimeError('Version info not available')
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
     name='resettabletimer',
-    version='0.7.0',
+    version=version,
     author='Toni Kangas',
     description='Wrapper for threading.Timer to allow resetting',
     long_description=long_description,
